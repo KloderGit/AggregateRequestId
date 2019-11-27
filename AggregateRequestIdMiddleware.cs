@@ -18,6 +18,7 @@ namespace AggregateRequestId
             if (context.Request.Headers.Any(x => x.Key == "Aggregate-Request-Id"))
             {
                 var id = context.Request.Headers.FirstOrDefault(x => x.Key == "Aggregate-Request-Id").Value;
+                context.Request.Headers.Add("Aggregate-Request-Id", id);
                 context.Response.Headers.Add("Aggregate-Request-Id", id);
             }
             else
