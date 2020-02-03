@@ -15,5 +15,7 @@ jobs:
         dotnet-version: 2.2.108
     - name: Build with dotnet
       run: dotnet build --configuration Release
+    - name: Download latest NuGet (cross-platform)
+      uses: olegtarasov/download-nuget@v1
     - name: Nuget V
-      run: apt install nuget
+      run: nuget --version
